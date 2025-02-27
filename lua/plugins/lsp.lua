@@ -3,6 +3,7 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        phpactor = {},
         -- PHP & Laravel
         intelephense = {
           settings = {

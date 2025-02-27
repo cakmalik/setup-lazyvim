@@ -1,3 +1,12 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
+vim.keymap.set("n", "<C-0>", function()
+  vim.cmd("bufdo bd")
+end, { desc = "Close all buffers" })
+
+vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<A-S-j>", "yyp", { noremap = true, silent = true })
+vim.keymap.set("n", "<A-S-k>", "yyP", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<C-_>", "gcc", { noremap = false }) -- Ctrl+/ di Normal mode
+vim.keymap.set("v", "<C-_>", "gc", { noremap = false }) -- Ctrl+/ di Visual mode
