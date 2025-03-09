@@ -15,7 +15,7 @@ return {
         -- Vue (jika pakai Laravel + Inertia.js)
         volar = {},
         -- Tambahkan TSServer untuk JavaScript & TypeScript
-        tsserver = {},
+        ts_ls = {},
       },
     },
   },
