@@ -6,6 +6,7 @@ return {
         "html",
         "php",
         "javascript",
+        "typescript",
         "css", -- Untuk Laravel + Blade
         "vue",
         "tsx",
