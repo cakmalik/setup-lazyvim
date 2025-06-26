@@ -3,11 +3,23 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
-        php = { "pint" }, -- Bisa ganti "php_cs_fixer" kalau pakai PHP-CS-Fixer
-        blade = { "blade-formatter" }, -- Blade pakai blade-formatter
+        php = { "pint" },
+        blade = { "prettier" }, -- ganti dari blade-formatter ke prettier
+      },
+      formatters = {
+        pint = {
+          command = "pint",
+          args = { "$FILENAME" },
+          stdin = false,
+        },
+        prettier = {
+          command = "npx",
+          args = { "prettier", "--stdin-filepath", "$FILENAME" },
+          stdin = true,
+        },
       },
       format_on_save = {
-        lsp_fallback = true, -- Jika tidak ada formatter, fallback ke LSP
+        lsp_fallback = true,
       },
     },
   },
