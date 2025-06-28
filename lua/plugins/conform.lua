@@ -4,7 +4,8 @@ return {
     opts = {
       formatters_by_ft = {
         php = { "pint" },
-        blade = { "prettier" }, -- ganti dari blade-formatter ke prettier
+        blade = { "prettier" },
+        vue = { "prettier" },
       },
       formatters = {
         pint = {
