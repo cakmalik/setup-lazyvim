@@ -6,6 +6,7 @@ return {
         php = { "pint" },
         blade = { "prettier" },
         vue = { "prettier" },
+        html = { "prettier" },
       },
       formatters = {
         pint = {
@@ -15,12 +16,20 @@ return {
         },
         prettier = {
           command = "npx",
-          args = { "prettier", "--stdin-filepath", "$FILENAME" },
+          args = {
+            "prettier",
+            "--plugin",
+            "prettier-plugin-blade",
+            "--stdin-filepath",
+            "$FILENAME",
+            "--single-quote",
+          },
           stdin = true,
         },
       },
       format_on_save = {
         lsp_fallback = true,
+        timeout_ms = 1000,
       },
     },
   },
