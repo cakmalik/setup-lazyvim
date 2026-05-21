@@ -4,3 +4,6 @@
 
 vim.opt.swapfile = false
 vim.opt.signcolumn = "yes"
+
+vim.opt.background = "dark" -- or "light"
+vim.opt.clipboard = "unnamedplus"

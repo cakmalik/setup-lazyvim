@@ -2,6 +2,10 @@ vim.keymap.set("n", "<C-0>", function()
   vim.cmd("bufdo bd")
 end, { desc = "Close all buffers" })
 
+vim.keymap.set("n", "<leader>0", "<cmd>%bd|e#|bd#<CR>", {
+  desc = "Close all buffers",
+})
+
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true })
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { noremap = true, silent = true })
 
@@ -45,3 +49,8 @@ vim.keymap.set("n", "<C-->", function()
   vim.o.guifont = string.format("%s:h%d", name, size - 1)
   print("Font size: " .. size - 1)
 end, { desc = "Decrease font size" })
+
+vim.keymap.set("n", "<leader>cp", function()
+  vim.fn.setreg("+", vim.fn.expand("%:p"))
+  print("Path copied")
+end, { desc = "Copy file path" })
